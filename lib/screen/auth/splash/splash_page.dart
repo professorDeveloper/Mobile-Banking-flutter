@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gita_mobile_baning/screen/auth/splash/splash_provider.dart';
 
 class SplashScreen extends StatefulWidget {
+
+  static final  route="/splash_route";
+
   const SplashScreen({Key? key}) : super(key: key);
 
   @override

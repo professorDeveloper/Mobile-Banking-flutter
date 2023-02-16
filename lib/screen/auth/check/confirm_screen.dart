@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gita_mobile_baning/screen/auth/check/confirm_screen_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
 class ConfirmScreen extends StatefulWidget {
+
+  static const route="/confirm_route";
+
   const ConfirmScreen({Key? key}) : super(key: key);
 
   @override
@@ -11,6 +15,8 @@ class ConfirmScreen extends StatefulWidget {
 }
 
 class _ConfirmScreenState extends State<ConfirmScreen> {
+  final _statesController = MaterialStatesController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -76,6 +82,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 SizedBox(width: 20,),
                 RoundCheckBox(onTap: (selected){
                   print('${selected}');
+                  context.read<ConfirmProvider>().updateState();
 
                     }
                 ,checkedColor: Color(0xff3862F8),
@@ -84,16 +91,36 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                   checkedWidget: Icon(Icons.check,size: 10,color: Colors.white,),
                   size: 20,
                   animationDuration: Duration(microseconds: 1),
-                  isChecked: true,
+                  isChecked: context.watch<ConfirmProvider>().stateProgress,
                 ),
                 SizedBox(width: 10,),
                 InkWell(onTap:(){
-
+                  context.read<ConfirmProvider>().updateState();
                 },child: Text("Я согласен со всеми условиями.",style: TextStyle(color: Color(0xff3862F8),fontWeight: FontWeight.w400,fontSize: 14),))
               ],
             ),
-            // SizedBox(height: 4,)
+            SizedBox(height: 4,),
+            Row(mainAxisAlignment:MainAxisAlignment.center,children: [
+              MaterialButton(onPressed: context.watch<ConfirmProvider>().stateProgress?(){}:null,
 
+                minWidth: 328,
+                clipBehavior: Clip.hardEdge,
+                height: 58,
+                visualDensity: VisualDensity.compact,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: context.watch<ConfirmProvider>().stateProgress?Color(0xff3862F8):Color(0xffF2F2F2),
+                    width: 0.6,
+                  ),
+                ),
+
+                disabledColor: Color(0xffF2F2F2),
+                color: context.watch<ConfirmProvider>().stateProgress?Color(0xff3862F8):Color(0xffF2F2F2),
+                child: Center(child: Text("Boshlash"),),
+                textColor: context.watch<ConfirmProvider>().stateProgress?Colors.white:Colors.black12,
+              )
+            ],)
     ]
     ,
     ),
