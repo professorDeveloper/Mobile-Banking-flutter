@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gita_mobile_baning/screen/auth/check/confirm_screen_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
+
+import 'confirm_screen_provider.dart';
 
 class ConfirmScreen extends StatefulWidget {
 
@@ -15,7 +16,6 @@ class ConfirmScreen extends StatefulWidget {
 }
 
 class _ConfirmScreenState extends State<ConfirmScreen> {
-  final _statesController = MaterialStatesController();
 
   @override
   Widget build(BuildContext context) {

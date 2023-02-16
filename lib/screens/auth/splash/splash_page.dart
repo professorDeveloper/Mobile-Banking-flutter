@@ -1,6 +1,6 @@
+import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gita_mobile_baning/screen/auth/splash/splash_provider.dart';
 
 class SplashScreen extends StatefulWidget {
 
