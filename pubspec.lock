@@ -208,6 +208,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
+  roundcheckbox:
+    dependency: "direct main"
+    description:
+      name: roundcheckbox
+      sha256: "5d6f607ed9d26fde0072af2545f56d84a6b6d2a45972b0c41f90c2d73224f339"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   shared_preferences:
     dependency: "direct main"
     description:

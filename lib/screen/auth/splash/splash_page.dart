@@ -12,18 +12,24 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    context.watch<SplashProvider>().setUpSplash(context);
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
+    // context.watch<SplashProvider>().setUpSplash(context);
 
     return Scaffold(
-      backgroundColor: Color(0xff060F27),
-      body: Center(child: Row(children: [
-        Image.asset("assets/image/icon_logo.png"),
-        Text("Splash")
-      ],),),
+      backgroundColor: Color(0xff102060),
+      body: Consumer<SplashProvider>(
+        builder: (context,provider,child){
+          provider.setUpSplash(context);
+          return Center(child: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
+            Image.asset("assets/image/icon_logo.png"),
+            Text("GITA BANK",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 26,fontStyle: FontStyle.italic),)
+          ],),);
+
+        },
+      ),
     );
   }
 }

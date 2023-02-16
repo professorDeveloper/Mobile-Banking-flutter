@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gita_mobile_baning/screen/auth/check/confirm_screen.dart';
+import 'package:flutter_gita_mobile_baning/screen/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../register/register_page.dart';
@@ -29,7 +31,7 @@ class SplashProvider extends ChangeNotifier {
 
     return PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) =>
-            _isHome ? RegisterScreen() : RegisterScreen(),
+            _isHome ? HomePageScreen() : ConfirmScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.0, 1.0);
           const end = Offset.zero;
