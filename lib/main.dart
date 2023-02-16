@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gita_mobile_baning/screen/auth/splash/splash_page.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
