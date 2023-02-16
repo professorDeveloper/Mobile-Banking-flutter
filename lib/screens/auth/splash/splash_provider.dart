@@ -1,18 +1,18 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/login/login_screen.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_page.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../check/confirm_screen.dart';
 
 class SplashProvider extends ChangeNotifier {
   bool _isHome = false;
 
   void setUpSplash(BuildContext context) {
     Timer(Duration(seconds: 3),
-        () => {setUp(), Navigator.pushReplacementNamed(context, _isHome ? SplashScreen.route : ConfirmScreen.route)});
+        () => {setUp(), Navigator.pushReplacementNamed(context, _isHome ? SplashScreen.route : SignInScreen.route)});
   }
 
   Future<void> setUp() async {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gita_mobile_baning/widgets/widget_edit_text.dart';
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
+  static const route="/sign_route";
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();

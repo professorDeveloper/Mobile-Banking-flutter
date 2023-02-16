@@ -6,13 +6,12 @@ class EditText extends StatelessWidget {
   String errorText;
   String hint;
 
-  EditText(
-      this.errorText,
+  EditText(this.errorText,
       {Key? key,
-      required this.editName,
+        required this.editName,
 
-      required this.inputType,
-      required this.hint})
+        required this.inputType,
+        required this.hint})
       : super(key: key);
 
   @override
@@ -33,10 +32,10 @@ class EditText extends StatelessWidget {
             ),
           ),
           Container(
-              padding: EdgeInsets.only(top:5.5, left: 20, bottom:5.5),
+              padding: EdgeInsets.only(top: 6, left: 20, bottom: 6),
               decoration: BoxDecoration(
                   color: Color(0xffF4F4F4),
-                  borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(11)),
               margin: EdgeInsets.symmetric(horizontal: 27),
               child: TextFormField(
                 style: const TextStyle(
@@ -45,8 +44,9 @@ class EditText extends StatelessWidget {
                     fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  errorText: errorText,
-                  errorStyle: TextStyle(fontWeight: FontWeight.w400,color: Colors.red,fontSize:16 ),
+                  errorStyle: TextStyle(fontWeight: FontWeight.w400,
+                      color: Colors.red,
+                      fontSize: 16),
                   hintText: hint.toString(),
                   hintStyle: TextStyle(
                       color: Color(0xFFA5A5A5),
@@ -54,6 +54,17 @@ class EditText extends StatelessWidget {
                       fontSize: 16),
                 ),
               )),
+          errorText.isNotEmpty ? Padding(
+            padding: const EdgeInsets.only(left: 35, top: 8),
+            child: Text(
+              errorText,
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.red),
+            ),
+          ): SizedBox()
+
         ],
       ),
     );
