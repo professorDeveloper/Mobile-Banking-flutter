@@ -1,4 +1,4 @@
-# flutter_gita_mobile_baning
+# flutter_mobile_bank
 
 A new Flutter project.
 
