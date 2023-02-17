@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/check/confirm_screen.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/check/confirm_screen_provider.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/login/login_screen.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/register/register_page.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/register/register_provider.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_page.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_provider.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +30,14 @@ class MyApp extends StatelessWidget {
             },
           );
         },
+    RegisterScreen.route: (context) {
+          return ChangeNotifierProvider(
+            create: (context) => RegisterProvider(),
+            builder: (context, child) {
+              return  RegisterScreen();
+            },
+          );
+        },
         ConfirmScreen.route: (context) {
           return ChangeNotifierProvider(
             create: (context) => ConfirmProvider(),
@@ -40,7 +50,7 @@ class MyApp extends StatelessWidget {
           return ChangeNotifierProvider(
             create: (context) => ConfirmProvider(),
             builder: (context, child) {
-              return const SignInScreen();
+              return  SignInScreen();
             },
           );
         },

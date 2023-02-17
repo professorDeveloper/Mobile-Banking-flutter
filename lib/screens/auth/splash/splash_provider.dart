@@ -6,13 +6,15 @@ import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_page.dart'
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../register/register_page.dart';
+
 
 class SplashProvider extends ChangeNotifier {
   bool _isHome = false;
 
   void setUpSplash(BuildContext context) {
     Timer(Duration(seconds: 3),
-        () => {setUp(), Navigator.pushReplacementNamed(context, _isHome ? SplashScreen.route : SignInScreen.route)});
+        () => {setUp(), Navigator.pushReplacementNamed(context, _isHome ? SplashScreen.route :RegisterScreen.route)});
   }
 
   Future<void> setUp() async {
