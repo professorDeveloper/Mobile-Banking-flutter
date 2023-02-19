@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/check/confirm_screen.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/check/confirm_screen_provider.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/login/login_screen.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/login/login_screen.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/login/login_screen_provider.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/register/register_page.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/register/register_provider.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_page.dart';
+import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +21,42 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      routes: {
+        SplashScreen.route: (context) {
+        return ChangeNotifierProvider(
+        create: (context) => SplashProvider(),
+        builder: (context, child) {
+        return const SplashScreen();
+        },
+        );
+        },
+        ConfirmScreen.route: (context) {
+        return ChangeNotifierProvider(
+        create: (context) => ConfirmProvider(),
+        builder: (context, child) {
+        return const ConfirmScreen();
+        },
+        );
+        },
+        SignInScreen.route: (context) {
+        return ChangeNotifierProvider(
+        create: (context) => SignInScreenProvider(),
+        builder: (context, child) {
+        return const SignInScreen();
+        },
+        );
+        },
+        RegisterScreen.route: (context) {
+        return ChangeNotifierProvider(
+        create: (context) => RegisterProvider(),
+        builder: (context, child) {
+        return const RegisterScreen();
+        },
+        );
+        },
+  },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,7 +69,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => SplashProvider(),
+        builder: (context, child) {
+          return const SplashScreen();
+        },
+      ),
     );
   }
 }

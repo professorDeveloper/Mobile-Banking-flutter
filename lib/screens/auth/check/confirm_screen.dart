@@ -101,7 +101,9 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
             ),
             SizedBox(height: 4,),
             Row(mainAxisAlignment:MainAxisAlignment.center,children: [
-              MaterialButton(onPressed: context.watch<ConfirmProvider>().stateProgress?(){}:null,
+              MaterialButton(onPressed: context.watch<ConfirmProvider>().stateProgress?(){
+                context.read<ConfirmProvider>().getStartedClickButton(context);
+              }:null,
 
                 minWidth: 328,
                 clipBehavior: Clip.hardEdge,
