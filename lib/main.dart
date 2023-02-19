@@ -6,6 +6,7 @@ import 'package:flutter_gita_mobile_baning/screens/auth/register/register_page.d
 import 'package:flutter_gita_mobile_baning/screens/auth/register/register_provider.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_page.dart';
 import 'package:flutter_gita_mobile_baning/screens/auth/splash/splash_provider.dart';
+import 'package:flutter_gita_mobile_baning/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -43,6 +44,14 @@ class MyApp extends StatelessWidget {
             create: (context) => ConfirmProvider(),
             builder: (context, child) {
               return const ConfirmScreen();
+            },
+          );
+        },
+        HomePageScreen.route: (context) {
+          return ChangeNotifierProvider(
+            create: (context) => ConfirmProvider(),
+            builder: (context, child) {
+              return const HomePageScreen();
             },
           );
         },

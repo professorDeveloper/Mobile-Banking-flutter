@@ -6,6 +6,7 @@ class ConfirmProvider extends ChangeNotifier{
   void updateState(){
     _stateProgress=!_stateProgress;
     notifyListeners();
+
   }
 
   void getStartedClickButton(BuildContext context){
